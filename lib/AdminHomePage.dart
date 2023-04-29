@@ -1,11 +1,13 @@
-
 import 'package:flutter/material.dart';
 
-import 'GestionFormation/AjouterFormation.dart';
-import 'CalendrierExamen/Semesters/semester.dart';
-import 'GestionSalle/RepartitionSalle.dart';
-import 'CalendrierExamen/Semesters/Semester1/Mastere/final2.dart';
 import 'CalendrierExamen/Semesters/Semester1/listeGroupCalendrier.dart';
+import 'GestionSalle/RepartitionSalle.dart';
+
+import 'buttonsF/add_calendrier.dart';
+import 'buttonsF/awelpageBleshAdd.dart';
+import 'buttonsF/awlpage.dart';
+import 'essais/absence.dart';
+import 'essais/test.dart';
 
 class AdminHomePage extends StatefulWidget {
   const AdminHomePage({Key? key}) : super(key: key);
@@ -20,10 +22,10 @@ class _AdminHomePageState extends State<AdminHomePage> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.cyan[700],
-        title: Text('Accueil Administrateur'),
+        title: const Text('Accueil Administrateur'),
       ),
       body: Container(
-        padding: EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(16.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
@@ -33,16 +35,20 @@ class _AdminHomePageState extends State<AdminHomePage> {
                   Expanded(
                     child: InkWell(
                       onTap: () {
-                        // Naviguer vers la page de gestion des comptes
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) =>
+                                    AdminExamCalendarPage1()));
                       },
                       child: Card(
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            Icon(Icons.timeline),
-                            SizedBox(height: 10.0),
+                            const Icon(Icons.timeline),
+                            const SizedBox(height: 10.0),
                             Text(
-                              'Gérer les comptes des utilisateurs',
+                              'test',
                               style: TextStyle(
                                   fontSize: 20.0, color: Colors.cyan[700]),
                             ),
@@ -63,8 +69,8 @@ class _AdminHomePageState extends State<AdminHomePage> {
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            Icon(Icons.school),
-                            SizedBox(height: 10.0),
+                            const Icon(Icons.school),
+                            const SizedBox(height: 10.0),
                             Text(
                               'Gérer les formations',
                               style: TextStyle(
@@ -88,8 +94,8 @@ class _AdminHomePageState extends State<AdminHomePage> {
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            Icon(Icons.school_outlined),
-                            SizedBox(height: 10.0),
+                            const Icon(Icons.school_outlined),
+                            const SizedBox(height: 10.0),
                             Text(
                               'Gérer les notes des étudiants',
                               style: TextStyle(
@@ -109,8 +115,8 @@ class _AdminHomePageState extends State<AdminHomePage> {
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            Icon(Icons.access_time),
-                            SizedBox(height: 10.0),
+                            const Icon(Icons.access_time),
+                            const SizedBox(height: 10.0),
                             Text(
                               'Gérer les emplois du temps',
                               style: TextStyle(
@@ -133,12 +139,12 @@ class _AdminHomePageState extends State<AdminHomePage> {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => Semester()));
+                                builder: (context) => CalendPage()));
                       },
                       child: Card(
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
+                          children: const [
                             Icon(Icons.class_outlined),
                             SizedBox(height: 10.0),
                             Text(
@@ -155,7 +161,11 @@ class _AdminHomePageState extends State<AdminHomePage> {
                   Expanded(
                     child: InkWell(
                       onTap: () {
-                        // Naviguer vers la page de gestion des emplois du temps
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => AttendancePage(studentId: '',)));
+                        
                       },
                       child: Card(
                         child: Column(
@@ -186,14 +196,15 @@ class _AdminHomePageState extends State<AdminHomePage> {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => RepertitionSalle()));
+                                builder: (context) =>
+                                    const RepertitionSalle()));
                       },
                       child: Card(
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            Icon(Icons.class_outlined),
-                            SizedBox(height: 10.0),
+                            const Icon(Icons.class_outlined),
+                            const SizedBox(height: 10.0),
                             Text(
                               'Gérer les réparations de salles',
                               style: TextStyle(

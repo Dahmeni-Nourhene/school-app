@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
+import '../../../../screen/read_examen.dart';
 import 'finalllllllllllllll3.dart';
 
 
@@ -41,8 +42,8 @@ class _LicencesCalendrierState extends State<LicencesCalendrier> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => licenceIdExamSchedulePageFinal3(
-                              licenceId: 'licence1'),
+                          builder: (context) => ReadExamen(
+                              ),
                         ),
                       );
                     },
@@ -80,8 +81,8 @@ class _LicencesCalendrierState extends State<LicencesCalendrier> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => licenceIdExamSchedulePageFinal3(
-                              licenceId: 'licence2'),
+                          builder: (context) => ReadExamen(
+                              ),
                         ),
                       );
                     },
@@ -119,8 +120,8 @@ class _LicencesCalendrierState extends State<LicencesCalendrier> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => licenceIdExamSchedulePageFinal3(
-                              licenceId: 'licence3'),
+                          builder: (context) => ReadExamen(
+                              ),
                         ),
                       );
                     },
@@ -158,8 +159,8 @@ class _LicencesCalendrierState extends State<LicencesCalendrier> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => licenceIdExamSchedulePageFinal3(
-                              licenceId: 'licence4'),
+                          builder: (context) => ReadExamen(
+                              ),
                         ),
                       );
                     },

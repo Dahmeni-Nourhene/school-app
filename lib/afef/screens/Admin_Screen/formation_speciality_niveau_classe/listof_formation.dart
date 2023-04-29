@@ -1,24 +1,20 @@
+import 'package:essai2/afef/screens/Admin_Screen/formation_speciality_niveau_classe/specialityLicence.dart';
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
-import 'Semester1/listeGroupCalendrier.dart';
-import 'Semester2/listeGroupCalendrierS2.dart';
-
-
-
-class Semester extends StatefulWidget {
+class listeFormation extends StatefulWidget {
   @override
-  _SemesterState createState() => _SemesterState();
+  _listeFormationState createState() => _listeFormationState();
 }
 
-class _SemesterState extends State<Semester> {
+class _listeFormationState extends State<listeFormation> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
           backgroundColor: Colors.cyan[700],
           title: Text(
-            'Calendrier de examens',
+            'Formations ',
             style: TextStyle(color: Colors.white),
           ),
         ),
@@ -43,7 +39,7 @@ class _SemesterState extends State<Semester> {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => listeGroupCalendrier()));
+                              builder: (context) => SpecialityLicencePage()));
                     },
                     child: Row(
                       children: [
@@ -56,7 +52,7 @@ class _SemesterState extends State<Semester> {
                         ),
                         SizedBox(width: 30),
                         Text(
-                          "Semestere 1",
+                          "Licences",
                           style: TextStyle(
                               fontSize: 20.0, color: Colors.cyan[700]),
                         ),
@@ -80,10 +76,10 @@ class _SemesterState extends State<Semester> {
                         textStyle: const TextStyle(
                             color: Color.fromARGB(255, 16, 105, 222))),
                     onPressed: () {
-                      Navigator.push(
+                      /* Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => listeGroupCalendrierS2()));
+                              builder: (context) => MastereCalendrier()));*/
                     },
                     child: Row(
                       children: [
@@ -96,7 +92,7 @@ class _SemesterState extends State<Semester> {
                         ),
                         SizedBox(width: 30),
                         Text(
-                          "Semestere 2",
+                          "Mastéres",
                           style: TextStyle(
                               fontSize: 20.0, color: Colors.cyan[700]),
                         ),

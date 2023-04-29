@@ -1,21 +1,21 @@
+import 'package:essai2/afef/screens/Admin_Screen/listeenseingant.dart';
+import 'package:essai2/afef/screens/Admin_Screen/listeetudiant.dart';
+import 'package:essai2/afef/screens/Admin_Screen/listemploye.dart';
 import 'package:flutter/material.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 
-import 'finaal3S2.dart';
-
-class LicencesCalendrierS2 extends StatefulWidget {
+class ListeMembre extends StatefulWidget {
   @override
-  _LicencesCalendrierS2State createState() => _LicencesCalendrierS2State();
+  _ListeMembreState createState() => _ListeMembreState();
 }
 
-class _LicencesCalendrierS2State extends State<LicencesCalendrierS2> {
+class _ListeMembreState extends State<ListeMembre> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
           backgroundColor: Colors.cyan[700],
           title: Text(
-            'Calendrier de examens',
+            'Liste des membres',
             style: TextStyle(color: Colors.white),
           ),
         ),
@@ -34,17 +34,12 @@ class _LicencesCalendrierS2State extends State<LicencesCalendrierS2> {
                         minimumSize: const Size(60.0, 60.0),
                         backgroundColor: Colors.cyan[50],
                         elevation: 10.0,
-                        textStyle: const TextStyle(
-                            color: Color.fromARGB(255, 16, 105, 222))),
+                        textStyle: const TextStyle(color: Colors.white)),
                     onPressed: () {
                       Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) =>
-                              licenceS2IdExamSchedulePageFinal3S2(
-                                  licenceS2Id: 'licence11'),
-                        ),
-                      );
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const TeacherListPage()));
                     },
                     child: Row(
                       children: [
@@ -57,11 +52,14 @@ class _LicencesCalendrierS2State extends State<LicencesCalendrierS2> {
                         ),
                         SizedBox(width: 30),
                         Text(
-                          "Licence  en Informatique \nGénie Logiciel",
-                          style: TextStyle(fontSize: 15.0, color: Colors.black),
+                          "Liste des enseignants",
+                          style: TextStyle(fontSize: 20.0),
                         ),
                       ],
                     )),
+              ),
+              SizedBox(
+                height: 35,
               ),
               SizedBox(
                 height: 80,
@@ -74,17 +72,12 @@ class _LicencesCalendrierS2State extends State<LicencesCalendrierS2> {
                         minimumSize: const Size(60.0, 60.0),
                         backgroundColor: Colors.cyan[50],
                         elevation: 10.0,
-                        textStyle: const TextStyle(
-                            color: Color.fromARGB(255, 16, 105, 222))),
+                        textStyle: const TextStyle(color: Colors.white)),
                     onPressed: () {
                       Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) =>
-                              licenceS2IdExamSchedulePageFinal3S2(
-                                  licenceS2Id: 'licence22'),
-                        ),
-                      );
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const StudentListPage()));
                     },
                     child: Row(
                       children: [
@@ -92,16 +85,19 @@ class _LicencesCalendrierS2State extends State<LicencesCalendrierS2> {
                           width: 30,
                         ),
                         Icon(
-                          Icons.work,
+                          Icons.school,
                           color: Colors.cyan[700],
                         ),
                         SizedBox(width: 30),
                         Text(
-                          "Licence en Management",
-                          style: TextStyle(fontSize: 15.0, color: Colors.black),
+                          "Liste des étudiants",
+                          style: TextStyle(fontSize: 20.0),
                         ),
                       ],
                     )),
+              ),
+              SizedBox(
+                height: 35,
               ),
               SizedBox(
                 height: 80,
@@ -114,17 +110,12 @@ class _LicencesCalendrierS2State extends State<LicencesCalendrierS2> {
                         minimumSize: const Size(60.0, 60.0),
                         backgroundColor: Colors.cyan[50],
                         elevation: 10.0,
-                        textStyle: const TextStyle(
-                            color: Color.fromARGB(255, 16, 105, 222))),
+                        textStyle: const TextStyle(color: Colors.white)),
                     onPressed: () {
                       Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) =>
-                              licenceS2IdExamSchedulePageFinal3S2(
-                                  licenceS2Id: 'licence33'),
-                        ),
-                      );
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const EmployeListPage()));
                     },
                     child: Row(
                       children: [
@@ -137,48 +128,8 @@ class _LicencesCalendrierS2State extends State<LicencesCalendrierS2> {
                         ),
                         SizedBox(width: 30),
                         Text(
-                          "Licence en Finance",
-                          style: TextStyle(fontSize: 15.0, color: Colors.black),
-                        ),
-                      ],
-                    )),
-              ),
-              SizedBox(
-                height: 80,
-                width: 400,
-                child: ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(11.0),
-                        ),
-                        minimumSize: const Size(60.0, 60.0),
-                        backgroundColor: Colors.cyan[50],
-                        elevation: 10.0,
-                        textStyle: const TextStyle(
-                            color: Color.fromARGB(255, 16, 105, 222))),
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) =>
-                              licenceS2IdExamSchedulePageFinal3S2(
-                                  licenceS2Id: 'licence44'),
-                        ),
-                      );
-                    },
-                    child: Row(
-                      children: [
-                        SizedBox(
-                          width: 30,
-                        ),
-                        Icon(
-                          Icons.work,
-                          color: Colors.cyan[700],
-                        ),
-                        SizedBox(width: 30),
-                        Text(
-                          " Licence en Marketing",
-                          style: TextStyle(fontSize: 15.0, color: Colors.black),
+                          "Liste des employés",
+                          style: TextStyle(fontSize: 20.0),
                         ),
                       ],
                     )),
