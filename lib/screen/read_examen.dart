@@ -7,14 +7,14 @@ import 'package:essai2/screen/create_examen.dart';
 import 'package:essai2/screen/update_examen.dart';
 import 'package:flutter/material.dart';
 
+import '../Model/calendriers_model.dart';
 import '../controller/Examen_controller.dart';
 import '../buttonsF/calender_firebase.dart';
 
 class ReadExamen extends StatefulWidget {
-  const ReadExamen({super.key});
-////////////////////////////////
+  final Calendriers idGroup;
+  const ReadExamen({super.key, required this.idGroup});
 
-////////////////////////////////
   @override
   State<ReadExamen> createState() => _ReadExamenState();
 }
@@ -29,34 +29,28 @@ class _ReadExamenState extends State<ReadExamen> {
           backgroundColor: Colors.cyan[700],
           title: const Text(
             'Calendrier des examens',
+            
           ),
-          leading: IconButton(
-            icon: const Icon(Icons.arrow_back),
-            onPressed: () {
-              // Navigator.push(
-              //   context,
-              //   MaterialPageRoute(
-              //       builder: (context) => LoadDataFromFireStore(
-              //             calendarId: 'calendarId'
-              //           )),
-              // );
-             Navigator.pop(context);
-            },
-          ),
+leading: BackButton(onPressed: (){
+  Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) =>  LoadDataFromFireBase( calendarId: widget.idGroup ,)),
+              );
+}),
         ),
         floatingActionButton: FloatingActionButton(
             backgroundColor: Colors.cyan[700],
             onPressed: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => const Examen()),
+                MaterialPageRoute(builder: (context) =>  Examen(idGroup: widget.idGroup ,)),
               );
             },
             child: const Icon(
               Icons.add,
             )),
         body: StreamBuilder<List<ExamSchedule>>(
-            stream: examenController.readExamSchedule(),
+            stream: examenController.readExamSchedule(widget.idGroup.id.trim()),
             builder: (context, snapshot) {
               if (snapshot.hasError) {
                 return Center(

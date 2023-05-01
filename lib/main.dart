@@ -26,7 +26,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+    
       home: AdminHomePage(),
+      theme: ThemeData(primaryColor: Colors.cyan[700]),
     );
   }
 }

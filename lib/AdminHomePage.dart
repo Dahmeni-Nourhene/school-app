@@ -21,6 +21,7 @@ class _AdminHomePageState extends State<AdminHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         backgroundColor: Colors.cyan[700],
         title: const Text('Accueil Administrateur'),
       ),
@@ -66,8 +67,12 @@ class _AdminHomePageState extends State<AdminHomePage> {
                                 builder: (context) => FormationPage()));
                       },
                       child: Card(
+
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
+                          
+
+                          
                           children: [
                             const Icon(Icons.school),
                             const SizedBox(height: 10.0),
@@ -164,8 +169,9 @@ class _AdminHomePageState extends State<AdminHomePage> {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => AttendancePage(studentId: '',)));
-                        
+                                builder: (context) => AttendancePage(
+                                      studentId: '',
+                                    )));
                       },
                       child: Card(
                         child: Column(

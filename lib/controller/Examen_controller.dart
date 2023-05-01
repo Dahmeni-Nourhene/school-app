@@ -5,8 +5,8 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import '../buttonsF/calender_firebase.dart';
 
 class ExamenController {
-  Stream<List<ExamSchedule>> readExamSchedule() => FirebaseFirestore.instance
-      .collection('exam_schedule')
+  Stream<List<ExamSchedule>> readExamSchedule(String id) => FirebaseFirestore.instance
+      .collection('exam_schedule').where('group', isEqualTo: id)
       .snapshots()
       .map((snapshots) => snapshots.docs
           .map((doc) => ExamSchedule.fromJson(doc.data()))

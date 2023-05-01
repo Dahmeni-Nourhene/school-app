@@ -60,7 +60,7 @@ class LoadDataFromFireStoreState extends State<LoadDataFromFireStore> {
   Future<void> getDataFromFireStore(String id) async {
     var snapShotsValue = await databaseReference
         .collection("exam_schedule")
-        .where('group', isEqualTo: id.trim())
+        .where('group', isEqualTo: id.trim().toString())
         // .doc(widget.calendarId)
         //.collection("events")
         .get();
@@ -102,7 +102,7 @@ class LoadDataFromFireStoreState extends State<LoadDataFromFireStore> {
               onPressed: () {
                 Navigator.pushReplacement(
                   context,
-                  MaterialPageRoute(builder: (context) => ReadExamen()),
+                  MaterialPageRoute(builder: (context) => ReadExamen(idGroup: widget.calendarId,)),
                 );
               },
             ),
